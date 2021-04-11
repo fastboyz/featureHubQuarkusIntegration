@@ -7,41 +7,43 @@ import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Entity
-public class Game {
+public class Match {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @ManyToOne
-    private Club home;
+    private int attendance;
 
     @ManyToOne
-    private Club away;
+    private Team home;
+
+    @ManyToOne
+    private Team away;
+
+    @ManyToOne
+    private Stadium stadium;
+
+
 
     private LocalDate date;
-
-    private int homeScore;
-
-    private int awayScore;
-
-    public Game() {
+    public Match() {
 
     }
 
-    public Club getHome() {
+    public Team getHome() {
         return home;
     }
 
-    public void setHome(Club home) {
+    public void setHome(Team home) {
         this.home = home;
     }
 
-    public Club getAway() {
+    public Team getAway() {
         return away;
     }
 
-    public void setAway(Club away) {
+    public void setAway(Team away) {
         this.away = away;
     }
 
@@ -61,19 +63,19 @@ public class Game {
         this.date = date;
     }
 
-    public int getHomeScore() {
-        return homeScore;
+    public int getAttendance() {
+        return attendance;
     }
 
-    public void setHomeScore(int homeScore) {
-        this.homeScore = homeScore;
+    public void setAttendance(int attendance) {
+        this.attendance = attendance;
     }
 
-    public int getAwayScore() {
-        return awayScore;
+    public Stadium getStadium() {
+        return stadium;
     }
 
-    public void setAwayScore(int awayScore) {
-        this.awayScore = awayScore;
+    public void setStadium(Stadium stadium) {
+        this.stadium = stadium;
     }
 }
