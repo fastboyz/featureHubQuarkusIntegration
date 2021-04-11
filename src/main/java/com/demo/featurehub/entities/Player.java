@@ -1,17 +1,12 @@
 package com.demo.featurehub.entities;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Player {
-
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class Player extends PanacheEntity {
     @ManyToOne
     private Team team;
 

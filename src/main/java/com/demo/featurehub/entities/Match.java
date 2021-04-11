@@ -1,18 +1,13 @@
 package com.demo.featurehub.entities;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Entity
-public class Match {
-
-    @Id
-    @GeneratedValue
-    private Long id;
-
+public class Match extends PanacheEntity {
     private int attendance;
 
     @ManyToOne
@@ -24,9 +19,8 @@ public class Match {
     @ManyToOne
     private Stadium stadium;
 
-
-
     private LocalDate date;
+
     public Match() {
 
     }

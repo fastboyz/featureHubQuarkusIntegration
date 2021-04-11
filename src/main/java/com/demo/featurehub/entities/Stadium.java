@@ -1,15 +1,11 @@
 package com.demo.featurehub.entities;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
-public class Stadium {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Stadium extends PanacheEntity {
 
     private String name;
 
