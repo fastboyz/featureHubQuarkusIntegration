@@ -1,5 +1,7 @@
 package com.demo.featurehub;
 
+import io.featurehub.client.StaticFeatureContext;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -10,6 +12,7 @@ public class ExampleResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return String.valueOf(Features.FEATURE_CALCULATE_GOAL_AGGREGATE.isActive());
+        System.out.println(StaticFeatureContext.repository.getFeatureState("TEST_STRING").getString());
+        return StaticFeatureContext.repository.getFeatureState("TEST_STRING").getRawJson();
     }
 }
